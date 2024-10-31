@@ -11,7 +11,7 @@ function iniciarJogo(){
     zerarValorInput();
     gerarMensagemInicial();
     document.getElementById('reiniciar').setAttribute("disabled",true);
-    console.log(`O número secreto é: ${numeroAleatorio}`);
+    console.log(`Alteração realizada diretamente no github: O número secreto é: ${numeroAleatorio}`);
 }
 
 function gerarMensagemInicial() {
