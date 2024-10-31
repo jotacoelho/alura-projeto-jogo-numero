@@ -2,7 +2,6 @@ let numeroAleatorio;
 let numeroLimiteChute = 10;
 let numeroChutes;
 let listaNumerosSorteados = [];
-let listaLinguagens = ["c","java",'assembly','python','javascript'];
 
 iniciarJogo();
 
@@ -19,7 +18,6 @@ function gerarMensagemInicial() {
     alterarTextoTag('h1',"Jogo do número secreto");
     alterarTextoTag('p',"Escolha um número entre 1 e "+numeroLimiteChute);
     alterarTextoTag('h3',`O número secreto é ${numeroAleatorio}`);
-    alterarTextoTag('h2',`Posição ult da lista é ${listaLinguagens[listaLinguagens.length-1]}`);
 }
 
 function alterarTextoTag( tag, mensagem){
@@ -50,7 +48,7 @@ function verificarChute(){
     if (entrada == numeroAleatorio){
         alterarTextoTag('h1','Acertou');
         alterarTextoTag('p','Você descobriu o número secreto');
-        numeroChutes > 1 ? alterarTextoTag('h3',"Foram necessáriasss " + numeroChutes + " tentativas! A lista de números sorteados até o momento foi: "+listaNumerosSorteados)
+        numeroChutes > 1 ? alterarTextoTag('h3',"Foram necessárias " + numeroChutes + " tentativas! A lista de números sorteados até o momento foi: "+listaNumerosSorteados)
          : alterarTextoTag('h3',"Foi necessário realizar apenas " + numeroChutes + " tentativa!");
         document.getElementById('reiniciar').removeAttribute("disabled");
     } else {
@@ -68,6 +66,6 @@ function zerarValorInput(){
     document.querySelector('input').value = '';
 }
 
-function reiniciarJogo(){
-
+function apresentarNumerosSorteados(){
+    alterarTextoTag('h3',`Lista de números sorteados: ${listaNumerosSorteados}`);
 }
